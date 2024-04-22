@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  nginx-proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile.proxy
+    container_name: nginx_proxy
+    restart: always
+    ports:
+      - "8080:80"
+
+  nginx-index:
+    build:
+      context: .
+      dockerfile: Dockerfile.index
+    container_name: nginx_index
+    restart: always
+    ports:
+      - "8081:80"

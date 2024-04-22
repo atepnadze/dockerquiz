@@ -1,0 +1,11 @@
+# წყაროს შექმნა
+FROM nginx:alpine
+
+# პაკეტების დაყენება
+RUN apk add --no-cache bash
+
+# index.html ფაილის შექმნა
+RUN echo "<h1>Docker Quiz</h1>" > /usr/share/nginx/html/index.html
+
+# მისი გაშვება
+CMD ["nginx", "-g", "daemon off;"]
